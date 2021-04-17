@@ -8,7 +8,7 @@ class Main extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            campsites: CAMPSITES,
+            campsite: CAMPSITES,
             selectedCampsite: null
         };
     }
@@ -25,8 +25,8 @@ class Main extends Component {
                         <NavbarBrand href="/">NuCamp</NavbarBrand>
                     </div>
                 </Navbar>
-                <Directory campsites={this.state.campsites} onClick={campsiteId => this.onCampsiteSelect(campsiteId)}/>
-                <CampsiteInfo campsite={this.state.campsites.filter(campsite => campsite.id === this.state.selectedCampsite)[0]} />
+                <Directory campsite={this.state.campsite} onClick={campsiteId => this.onCampsiteSelect(campsiteId)}/>
+                <CampsiteInfo campsite={this.state.campsite.filter(campsite => campsite.id === this.state.selectedCampsite)[0]} />
             </div>
         );
     };
